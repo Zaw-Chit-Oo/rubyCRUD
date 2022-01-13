@@ -133,23 +133,23 @@ const CustomerForm = (props) => {
     },
   };
 
-  const fileUpload = {
-    name: 'file',
-    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-    headers: {
-      authorization: 'authorization-text',
-    },
-    onChangeOne(info) {
-      if (info.file.status !== 'uploading') {
-        console.log(info.file, info.fileList);
-      }
-      if (info.file.status === 'done') {
-        message.success(`${info.file.name} file uploaded successfully`);
-      } else if (info.file.status === 'error') {
-        message.error(`${info.file.name} file upload failed.`);
-      }
-    },
-  };
+  // const fileUpload = {
+  //   name: 'file',
+  //   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+  //   headers: {
+  //     authorization: 'authorization-text',
+  //   },
+  //   onChangeOne(info) {
+  //     if (info.file.status !== 'uploading') {
+  //       console.log(info.file, info.fileList);
+  //     }
+  //     if (info.file.status === 'done') {
+  //       message.success(`${info.file.name} file uploaded successfully`);
+  //     } else if (info.file.status === 'error') {
+  //       message.error(`${info.file.name} file upload failed.`);
+  //     }
+  //   },
+  // };
 
   return (
     <div
@@ -262,7 +262,7 @@ const CustomerForm = (props) => {
           valuePropName="file"
           getValueFromEvent={normFile}
         >
-          <Upload {...fileUpload} maxCount={1}>
+          <Upload maxCount={1}>
             <Button icon={<UploadOutlined />}>Click to Upload(Max: 1)</Button>
           </Upload>
         </Form.Item>

@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     namespace :v1 do
       # ユーザー管理画面
       get 'user/indexUser', to: "user#indexUser"
+      post 'users', to: 'user#create'
+
+      # For login
+      post "login", to: "sessions#create"
+      delete "logout", to: "sessions#destroy"
+      get "login", to: "sessions#new"
     end
   end
   get 'home/index'

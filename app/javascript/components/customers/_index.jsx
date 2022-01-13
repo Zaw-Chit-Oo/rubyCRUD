@@ -223,8 +223,8 @@ class Customer extends React.Component {
   // 挿入機能 「または」 更新機能
   onFinish = (values) => {
     // console.log("Finish:", values);
-    // values.customer_img = values.upload.name;
-    // console.log(values.customer_img);
+    values.customer_img = values.upload.name;
+    console.log(values.customer_img);
     values.name = validator.trim(values.name);
     values.address = validator.trim(values.address);
     if (this.customerName(values.name)) {
