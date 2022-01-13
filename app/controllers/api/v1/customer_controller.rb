@@ -3,7 +3,7 @@ class Api::V1::CustomerController < ApplicationController
 
   # データベースからデータを取得する
   def indexCustomer
-    puts("==========",session[:current_user_id],"=======";)
+    puts("==========",session[:current_user_id],"=======")
     customerSql = "select customers.id as customer_id, items.id as order_id, groups.id as group_id,
     customers.name, customers.age, customers.email, customers.address, items.name as item_name, 
     groups.name as group_name, customers.order_date, customers.remark
